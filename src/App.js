@@ -36,7 +36,7 @@ function App() {
 
     const selectedINValues = selectedINButtons.map(index => INbuttons[index]);
     const selectedAMValues = selectedAMButtons.map(index => AMbuttons[index]);
-  
+
     emailjs.send(
       'service_m2tov4f',
       'template_4pthx16',
@@ -76,11 +76,21 @@ function App() {
   };
 
   const donwloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '../assets/Resume(24).pdf';
-    link.download = 'Resume_Pramit_Bhatia.pdf';
-    link.target = '_blank';
-    link.click();
+    // Define the relative path to the file
+    const relativePath = 'https://github.com/pramitbhatia25/Portfolio-Update/blob/4fc1d2b458c24a6cde6bee090e0e0ac1406c732d/src/assets/Resume(24).pdf'; // Update with your file's relative path
+
+    // Create an anchor element to trigger the download
+    const a = document.createElement('a');
+    a.href = relativePath;
+    a.download = 'downloaded_file.pdf'; // Specify the desired filename for the downloaded file
+
+    // Trigger a click event on the anchor element
+    const event = new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: true
+    });
+    a.dispatchEvent(event);
   }
 
   return (
@@ -448,11 +458,11 @@ function App() {
         <a href="https://www.linkedin.com/in/pramit-bhatia-220680b2/" target="__blank__">
           <AiFillLinkedin className='social_icon' color={'white'} size={'25px'} />
         </a>
-        <button className='social_resume' onClick={donwloadResume}>
-          <div style={{ fontSize: "20px" }} className=''>
+        <a href="Resume(24).pdf" download="Pramit_Bhatia_Resume.pdf" className='social_resume'>
+          <div style={{ fontSize: "20px", color:"black"}} className=''>
             Resume
           </div>
-        </button>
+        </a>
       </div>
       <div className='scroll_down'>
       </div>
