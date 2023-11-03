@@ -458,7 +458,7 @@ function App() {
         <a href="https://www.linkedin.com/in/pramit-bhatia-220680b2/" target="__blank__">
           <AiFillLinkedin className='social_icon' color={'white'} size={'25px'} />
         </a>
-        <a href="Resume(24).pdf" download="Pramit_Bhatia_Resume.pdf" className='social_resume'>
+        <a href="Resume.pdf" download="Pramit_Bhatia_Resume.pdf" className='social_resume'>
           <div style={{ fontSize: "20px", color:"black"}} className=''>
             Resume
           </div>
