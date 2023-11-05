@@ -95,6 +95,7 @@ function App() {
 
   return (
     <div className="App">
+
       <div className="navbar">
         <a href="#home" alt="" className='nav_link'>
           HOME

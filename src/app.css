@@ -33,6 +33,7 @@
     border-radius: 20px;
     width: fit-content;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .social_resume:active {
@@ -280,7 +281,6 @@
 
 .projects_content_card {
     border: 1px solid rgb(77, 75, 75);
-    box-shadow: 0 0.1em .6em 0.1em #00fffc;
     border-radius: 20px;
     margin: 0 1vw;
     width: 31.33vw;
@@ -292,7 +292,6 @@
     overflow: hidden;
     transition: transform 0.3s;
 }
-
 .projects_content_card_overlay {
     background-color: rgb(0, 0, 0, 0.8);
     transition: margin-top 0.3s ease;
@@ -328,9 +327,9 @@
     border: 1px solid black;
     font-size: 15px;
     color: white;
-    background-color: aqua;
+    background-color: black;
     font-family: 'Anton';
-    color: black;
+    color: white;
     text-align: center;
 }
 
