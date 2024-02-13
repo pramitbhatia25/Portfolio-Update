@@ -1,8 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import "./app.css";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai"
 import { BiLogoGmail } from "react-icons/bi"
-import { ImSphere } from "react-icons/im"
 import emailjs from "@emailjs/browser";
 
 function App() {
@@ -25,6 +24,26 @@ function App() {
     'Opportunity',
     'Other'
   ];
+
+  useEffect(() => {
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      const navbar = document.getElementsByClassName("navbar")[0]; // Assuming only one navbar element
+      if (prevScrollpos > currentScrollPos) {
+        navbar.classList.remove("scrolled-down");
+      } else {
+        navbar.classList.add("scrolled-down");
+      }
+      prevScrollpos = currentScrollPos;
+    };
+    
+    // Cleanup function to remove the event listener when the component unmounts
+    return () => {
+      window.onscroll = null;
+    };
+  }, []);
+
 
   const handleCustomMessage = (e) => {
     setCustomMessage(e.target.value)
@@ -75,23 +94,6 @@ function App() {
     }
   };
 
-  const donwloadResume = () => {
-    // Define the relative path to the file
-    const relativePath = 'https://github.com/pramitbhatia25/Portfolio-Update/blob/4fc1d2b458c24a6cde6bee090e0e0ac1406c732d/src/assets/Resume(24).pdf'; // Update with your file's relative path
-
-    // Create an anchor element to trigger the download
-    const a = document.createElement('a');
-    a.href = relativePath;
-    a.download = 'downloaded_file.pdf'; // Specify the desired filename for the downloaded file
-
-    // Trigger a click event on the anchor element
-    const event = new MouseEvent('click', {
-      view: window,
-      bubbles: true,
-      cancelable: true
-    });
-    a.dispatchEvent(event);
-  }
 
   return (
     <div className="App">
@@ -145,7 +147,7 @@ function App() {
           </div>
           <div className='glitch'>
             <div className='about_large'>
-              DevOps Intern
+              SWE Intern
             </div>
           </div>
           <div className='about_small'>
@@ -171,7 +173,7 @@ function App() {
           </div>
           <div className='glitch'>
             <div className='about_large'>
-              SDE | DevOps
+              SWE | DevOps
             </div>
           </div>
           <div className='about_small'>
@@ -182,78 +184,53 @@ function App() {
       <div id="experience" className='experience'>
         <div className='experience_contents'>
           <div className='experience_heading'>
-            Companies I've interned at
+            Experience💼
           </div>
-          <div className='experience_heading_sub'>
-            (click\hover to learn more)
-          </div>
-          <div className='projects_content'>
-            <div className='projects_content_card' style={{ backgroundImage: `url(${require("./assets/images/experience_images/new1.webp")})` }}>
-              <div className='projects_content_card_overlay_banner'>
-                DevOps Intern - (May 2023 - Present)
-              </div>
-              <div className='projects_content_card_overlay'>
-                <div className='projects_content_card_overlay_text'>
-                  Reduced data monitoring time by 50% with a custom tool using Azure KeyVault, Python, and Selenium.
-                </div>
-                <div className='projects_content_card_overlay_text'>
-                  Improved efficiency by automating email processing and streamlining data export in Zoho Reports with Python and Azure services for OAuth2 token management.
-                </div>
-                <div className='projects_content_card_overlay_icons'>
-                  <a href="https://www.linkedin.com/company/cybriant/" target="__blank__" style={{ marginRight: "20px" }}>
-                    <AiFillLinkedin className="social_icon" size={30} color={'white'} style={{ marginTop: '10px' }} />
-                  </a>
-                  <a href="https://cybriant.com/" target="__blank__">
-                    <ImSphere className="social_icon" size={30} color={'white'} style={{ marginTop: '10px' }} />
-                  </a>
-
-                </div>
+          <div className='experience_content'>
+            <div className='experience_card'>
+              <div className='experience_card_img' style={{backgroundImage: `url(${require("./assets/images/experience_images/new1.webp")})`}}></div>
+              <div className='experience_card_postion b'> Software Engineer Intern </div>
+              <div className='experience_card_postion'> (May 2023 - Present) </div>
+              <div className='experience_card_content'>
+                <ul className='exp_ul'>
+                  <li className='exp_ul_li'>Led the end-to-end development of a full-stack Web App to automate QSR Reports for 50+ clients.</li>
+                  <li className='exp_ul_li'>Utilizing ReactJS + Flask and integrating AlienVault, Zoho Analytics and Microsoft Exchange APIs. </li>
+                  <li className='exp_ul_li'>Optimized data monitoring, enhancing system reliability through implementing Azure Functions and effective CI/CD pipelines.</li>                
+                </ul>
               </div>
             </div>
-            <div className='projects_content_card' style={{ backgroundImage: `url(${require("./assets/images/experience_images/new2.webp")})` }}>
-              <div className='projects_content_card_overlay_banner'>
-                Undergraduate Research Assistant - (August 2023 - Present)
-              </div>
-              <div className='projects_content_card_overlay'>
-                <div className='projects_content_card_overlay_text'>
-                  Selected for the prestigious Undergraduate Assistantship Program @ GSU.
-                  <div className='projects_content_card_overlay_text'>
-                    Developed a Linux-based C/C++ software integrated with ADIOS2 to establish a high-resolution scientific image database, streamlining data storage, retrieval, and management for researchers.                </div>
-                </div>
-                <div className='projects_content_card_overlay_icons'>
-                  <a href="https://www.linkedin.com/school/georgiastateuniversity/" target="__blank__" style={{ marginRight: "20px" }}>
-                    <AiFillLinkedin className="social_icon" size={30} color={'white'} style={{ marginTop: '10px' }} />
-                  </a>
-                  <a href="https://www.gsu.edu/" target="__blank__">
-                    <ImSphere className="social_icon" size={30} color={'white'} style={{ marginTop: '10px' }} />
-                  </a>
-
-                </div>
+            <div className='experience_card'>
+              <div className='experience_card_img' style={{backgroundImage: `url(${require("./assets/images/experience_images/new2.webp")})`}}></div>
+              <div className='experience_card_postion b'> Undergraduate Researcher </div>
+              <div className='experience_card_postion'> (August 2023 - Present) </div>
+              <div className='experience_card_content'>
+                <ul className='exp_ul'>
+                  <li className='exp_ul_li'>I was honored to be chosen for the prestigious Undergraduate Assistantship Program at GSU.</li>
+                  <li className='exp_ul_li'>I'm currently working on developing a Linux-based C/C++ software integrated with ADIOS2, created to optimize the management of high-resolution scientific images. This initiative streamlines data storage, retrieval, and management, significantly benefiting researchers in their work.</li>
+                </ul>
               </div>
             </div>
-            <div className='projects_content_card' style={{ backgroundImage: `url(${require("./assets/images/experience_images/new3.png")})` }}>
-              <div className='projects_content_card_overlay_banner'>
-                DevOps Intern - (Jan 2023 - April 2023)
-              </div>
-              <div className='projects_content_card_overlay'>
-                <div className='projects_content_card_overlay_text'>
-                  Collaborated on developing a Proof-Of-Concept for a Convolutional Neural Network (CNN) based pipeline.
-                </div>
-                <div className='projects_content_card_overlay_text'>
+            <div className='experience_card'>
+              <div className='experience_card_img' style={{backgroundImage: `url(${require("./assets/images/experience_images/new3.png")})`}}></div>
+              <div className='experience_card_postion b'> Data Science and ML Intern </div>
+              <div className='experience_card_postion'> (Jan 2023 - April 2023) </div>
+              <div className='experience_card_content'>
+                <ul className='exp_ul'>
+
+                  <li className='exp_ul_li'>
+                  Collaborated on developing a Proof-Of-Concept for a Convolutional Neural Network (CNN) based pipeline.                  
+                  </li>
+                  <li className='exp_ul_li'>
+                  This involved integrating data from LightCurve API, processing the data and saving to AWS S3 Bucket.
+                  </li>
+                  <li className='exp_ul_li'>
                   Led Scrum meets, applying Agile methodologies and facilitating Sprint Planning using Airtable.
-                </div>
-                <div className='projects_content_card_overlay_icons'>
-                  <a href="https://www.linkedin.com/company/spacelab-space/" target="__blank__" style={{ marginRight: "20px" }}>
-                    <AiFillLinkedin className="social_icon" size={30} color={'white'} style={{ marginTop: '10px' }} />
-                  </a>
-                  <a href="https://spacelab.space/" target="__blank__">
-                    <ImSphere className="social_icon" size={30} color={'white'} style={{ marginTop: '10px' }} />
-                  </a>
-
-                </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
+
         </div>
       </div>
       <div id="portfolio" className='projects'>
@@ -261,126 +238,82 @@ function App() {
           <div className='projects_heading'>
             Projects🚀
           </div>
-          <div className='experience_heading_sub'>
-            (click\hover to learn more)
-          </div>
-          <div className='projects_content'>
-            <div className='projects_content_card' style={{ backgroundImage: `url(${require("./assets/images/project_images/new1.png")})` }}>
-              <div className='projects_content_card_overlay_banner'>
-                CSC Showcase 2022 winner | MERN | AI | Object Detection
+          <div className='experience_content'>
+            <div className='experience_card projects_card'>
+              <div className='experience_card_img projects_img' style={{backgroundImage: `url(${require("./assets/images/project_images/hack.png")})`}}></div>
+              <div className='experience_card_postion b'> HealthSync - Hackalytics 2024 @ Georgia Tech</div>
+              <div style={{display:'flex', justifyContent:'space-between'}} className='experience_card_postion'><div>Winner - Best HealthCare Hack </div> <button className='view_btn'><a href="https://devfolio.co/projects/datadoctor-056d" style={{color: 'white', fontWeight: 'bold', margin: '0', padding: '0', textDecoration: 'none'}}>View Here</a></button></div>
+              <div className='experience_card_content project_card_content'>
+                <ul className='pro_ul exp_ul'>
+                  <li className='exp_ul_li'>An AI powered portal for Medical Professionals to create customized Chatbots for automated Data Extraction & Analysis.</li>
+                  <li className='exp_ul_li'>Utilized MERN Stack for frontend, Python/Flask for automation, MongoDB for Database & Azure for Generative AI.</li>
+                </ul>
               </div>
-              <div className='projects_content_card_overlay'>
-                <div className='projects_content_card_overlay_text'>
-                  Engineered a Real-time Sign-Language Recognition Application, presented at CSC Showcase event @ GSU
-                </div>
-                <div className='projects_content_card_overlay_text'>
-                  Performed transfer learning on a SSD-Mobilnet model for detection and introduced a point-based rewards system
-                </div>
-                <div className='projects_content_card_overlay_icons'>
-                  <a href="https://github.com/pramitbhatia25/SignEZ" target="__blank__" style={{ marginRight: "20px" }}>
-                    <AiFillGithub className="social_icon" size={30} color={'white'} style={{ marginTop: '30px' }} />
-                  </a>
-                  <a href="https://sign-ez.vercel.app/" target="__blank__">
-                    <ImSphere className="social_icon" size={30} color={'white'} style={{ marginTop: '30px' }} />
-                  </a>
+            </div>
+            <div className='experience_card projects_card'>
+              <div className='experience_card_img projects_img' style={{backgroundImage: `url(${require("./assets/images/project_images/new1.png")})`}}></div>
+              <div className='experience_card_postion b'> SignEZ - CS Demo Day 2023 @ GSU </div>
+              <div style={{display:'flex', justifyContent:'space-between'}} className='experience_card_postion'><div>Winner - 3rd Place</div> <button className='view_btn'><a href="https://sign-ez.vercel.app/" style={{color: 'white', fontWeight: 'bold', margin: '0', padding: '0', textDecoration: 'none'}}>View Here</a></button></div>
+              <div className='experience_card_content project_card_content'>
+                <ul className='pro_ul exp_ul'>
+                  <li className='exp_ul_li'>Engineered a Real-time Sign-Language Recognition Application with TensorflowJS using ‘handpose’ model.</li>
+                  <li className='exp_ul_li'>Implemented an end-to-end CI/CD pipeline on GitLab, Docker for containerization & GCP for deployment.</li>
+                </ul>
+              </div>
+            </div>
+            <div className='experience_card projects_card'>
+              <div className='experience_card_img projects_img' style={{backgroundImage: `url(${require("./assets/images/project_images/medium.png")})`}}></div>
+              <div className='experience_card_postion b'> KunstenAR - AI ATL 2023 @ Georgia Tech </div>
+              <div style={{display:'flex', justifyContent:'space-between'}} className='experience_card_postion'><div>Winner - Best Use Of Redis </div> <button className='view_btn'><a href="https://devpost.com/software/tbd-0bxgrv" style={{color: 'white', fontWeight: 'bold', margin: '0', padding: '0', textDecoration: 'none'}}>View Here</a></button></div>
+              <div className='experience_card_content project_card_content'>
+                <ul className='pro_ul exp_ul'>
 
-                </div>
-              </div>
-            </div>
-            <div className='projects_content_card' style={{ backgroundImage: `url(${require("./assets/images/project_images/new2.png")})` }}>
-              <div className='projects_content_card_overlay_banner'>
-                SAA Hack4Good Winner | Creativity & Innovation Prize | 2nd place
-              </div>
-              <div className='projects_content_card_overlay'>
-                <div className='projects_content_card_overlay_text'>
-                  Redesigned MARTA’s Incident Response app and led to increase in overall rating and downloads.
-                </div>
-                <div className='projects_content_card_overlay_text'>
-                  Selected to present at MARTA HQ | Awarded 2nd Place & Innovation Impact Award ($2250)
-                </div>
-                <div className='projects_content_card_overlay_icons'>
-                  <a href="https://github.com/pramitbhatia25/Hack-4-Good" target="__blank__">
-                    <AiFillGithub className="social_icon" size={30} color={'white'} style={{ marginTop: '30px' }} />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className='projects_content_card' style={{ backgroundImage: `url(${require("./assets/images/project_images/new3.png")})` }}>
-              <div className='projects_content_card_overlay_banner'>
-                Hackalytics 2022 | Streamlit | ML Classification
-              </div>
-              <div className='projects_content_card_overlay'>
-                <div className='projects_content_card_overlay_text'>
-                  Developed an eye-disease classifier via transfer learning on a resnet34 model hosted on GCP
-                </div>
-                <div className='projects_content_card_overlay_text'>
-                  Integrated GPT-3 and Twilio for remedy generation and connecting patients to nearby optometrists
-                </div>
-                <div className='projects_content_card_overlay_icons'>
-                  <a href="https://github.com/pramitbhatia25/yeuxview-Hacklytics-2023-" target="__blank__">
-                    <AiFillGithub className="social_icon" size={30} color={'white'} style={{ marginTop: '30px' }} />
-                  </a>
-                </div>
+                  <li className='exp_ul_li'>
+                  iOS Augmented Reality app that transforms hand-drawn sketches into 3D models you can communicate with.</li>
+                  <li className='exp_ul_li'>
+                  Utilized Python / Flask for backend, Redis for context preservation in chats & XCode for frontend.
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-          <div className='projects_content'>
-            <div className='projects_content_card' style={{ backgroundImage: `url(${require("./assets/images/project_images/new4.png")})` }}>
-              <div className='projects_content_card_overlay_banner'>
-                LiquidHacks 2023 | MERN | AI | API Integration
-              </div>
-              <div className='projects_content_card_overlay'>
-                <div className='projects_content_card_overlay_text'>
-                  Activity tracking web-app that synchronizes with FitBit API and OpenAI GPT-3 in real time                </div>
-                <div className='projects_content_card_overlay_icons'>
-                  <a href="https://github.com/pramitbhatia25/GamerH" target="__blank__">
-                    <AiFillGithub className="social_icon" size={30} color={'white'} style={{ marginTop: '30px' }} />
-                  </a>
-                </div>
+          <div className='experience_content'>
+            <div className='experience_card projects_card'>
+              <div className='experience_card_img projects_img' style={{backgroundImage: `url(${require("./assets/images/project_images/new2.png")})`}}></div>
+              <div className='experience_card_postion b'> Revamp - Social Action Alliance 2022 @ GSU</div>
+              <div style={{display:'flex', justifyContent:'space-between'}} className='experience_card_postion'><div>Winner - 2nd Place | Innovation & Impact Award </div> <button className='view_btn'><a href="https://github.com/pramitbhatia25/Hack-4-Good" style={{color: 'white', fontWeight: 'bold', margin: '0', padding: '0', textDecoration: 'none'}}>View Here</a></button></div>
+              <div className='experience_card_content project_card_content'>
+                <ul className='pro_ul exp_ul'>
+                  <li className='exp_ul_li'>Redesigned MARTA’s Incident Response app and led to increase in overall rating and downloads.</li>
+                  <li className='exp_ul_li'>Selected to give a special presentation to Board Members @ MARTA Headquarters. </li>
+                </ul>
               </div>
             </div>
-            <div className='projects_content_card' style={{ backgroundImage: `url(${require("./assets/images/project_images/new5.png")})` }}>
-              <div className='projects_content_card_overlay_banner'>
-                GameJam GSU 2022 Winner | Flask | JS
-              </div>
-              <div className='projects_content_card_overlay'>
-                <div className='projects_content_card_overlay_text'>
-                  Created an interactive multiplayer game using JavaScript and Flask with persistent leaderboard.
-                </div>
-                <div className='projects_content_card_overlay_text'>
-                  Awarded 1st Place in GameJam Hackathon @ Georgia State University
-                </div>
-                <div className='projects_content_card_overlay_icons'>
-                  <a href="https://github.com/pramitbhatia25/GameJam" target="__blank__" style={{ marginRight: "20px" }}>
-                    <AiFillGithub className="social_icon" size={30} color={'white'} style={{ marginTop: '30px' }} />
-                  </a>
-                  <a href="https://gamejamwinner.onrender.com/" target="__blank__">
-                    <ImSphere className="social_icon" size={30} color={'white'} style={{ marginTop: '30px' }} />
-                  </a>
-
-                </div>
+            <div className='experience_card projects_card'>
+              <div className='experience_card_img projects_img' style={{backgroundImage: `url(${require("./assets/images/project_images/new5.png")})`}}></div>
+              <div className='experience_card_postion b'> SpookyBird - GameJam 2023 @ Georgia State</div>
+              <div style={{display:'flex', justifyContent:'space-between'}} className='experience_card_postion'><div>Winner - 1st Place </div> <button className='view_btn'><a href="https://github.com/pramitbhatia25/GameJam" style={{color: 'white', fontWeight: 'bold', margin: '0', padding: '0', textDecoration: 'none'}}>View Here</a></button></div>
+              <div className='experience_card_content project_card_content'>
+                <ul className='pro_ul exp_ul'>
+                  <li className='exp_ul_li'>Created an interactive multiplayer game using JavaScript and Flask with persistent leaderboard.</li>
+                  <li className='exp_ul_li'>Recognized & Awarded Special Prizes from Meta (Facebook) employees.</li>
+                </ul>
               </div>
             </div>
-            <div className='projects_content_card' style={{ backgroundImage: `url(${require("./assets/images/project_images/new6.png")})` }}>
-              <div className='projects_content_card_overlay_banner'>
-                Open Source Contributions 2023 | 1800+ ⭐ Github
-              </div>
-              <div className='projects_content_card_overlay'>
-                <div className='projects_content_card_overlay_text'>
-                  Contributed towards designing and testing the front-end Streamlit playground for Hegel-AI
-                </div>
-                <div className='projects_content_card_overlay_text'>
-                  Added export functionalities to popular databases and UI Charting to view test results
-                </div>
-                <div className='projects_content_card_overlay_icons'>
-                  <a href="https://github.com/pramitbhatia25/prompttools" target="__blank__" style={{ marginRight: "20px" }}>
-                    <AiFillGithub className="social_icon" size={30} color={'white'} style={{ marginTop: '30px' }} />
-                  </a>
-                  <a href="https://prompttools.streamlit.app/" target="__blank__">
-                    <ImSphere className="social_icon" size={30} color={'white'} style={{ marginTop: '30px' }} />
-                  </a>
+            <div className='experience_card projects_card'>
+              <div className='experience_card_img projects_img' style={{backgroundImage: `url(${require("./assets/images/project_images/new6.png")})`}}></div>
+              <div className='experience_card_postion b'> Prompttools - Open Source Contributions 2023</div>
+              <div style={{display:'flex', justifyContent:'space-between'}} className='experience_card_postion'><div>2100+ ⭐ Github </div> <button className='view_btn'><a href="https://prompttools.streamlit.app/" style={{color: 'white', fontWeight: 'bold', margin: '0', padding: '0', textDecoration: 'none'}}>View Here</a></button></div>
+              <div className='experience_card_content project_card_content'>
+                <ul className='pro_ul exp_ul'>
 
-                </div>
+                  <li className='exp_ul_li'>
+                  Contributed towards designing and testing the front-end Streamlit playground for Hegel-AI Prompttools.                  
+                  </li>
+                  <li className='exp_ul_li'>
+                  Added export functionalities to popular databases and UI Charting to view test results.
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -460,7 +393,7 @@ function App() {
           <AiFillLinkedin className='social_icon' color={'white'} size={'25px'} />
         </a>
         <a href="Resume.pdf" download="Pramit_Bhatia_Resume.pdf" className='social_resume'>
-          <div style={{ fontSize: "20px", color:"black"}} className=''>
+          <div style={{ fontSize: "20px", color: "black" }} className=''>
             Resume
           </div>
         </a>

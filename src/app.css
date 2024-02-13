@@ -8,6 +8,19 @@
     cursor:"C:\\Users\\KIIT\\Desktop\\Projects\\ResumeUpdate\\src\\assets\\images\\cursor.png";
 }
 
+.content_loaded {
+    
+    flex-direction: column;
+}
+
+.d {
+    font-size: 10px;
+}
+
+.a {
+    font-size: 10px;
+}
+
 .social_links {
     width: 300px;
     height: 30px;
@@ -40,6 +53,11 @@
     transform: scale(0.9);
 }
 
+.scrolled-down {
+    height: 0 !important;
+    overflow: hidden;
+}
+
 .navbar {
     position: fixed;
     backdrop-filter: blur(5px);
@@ -50,6 +68,8 @@
     justify-content: space-around;
     align-items: center;
     z-index: 2;
+    transition: height 0.1s ease; /* Add a transition effect */
+
 }
 
 .nav_link {
@@ -176,16 +196,25 @@
 }
 
 .about_small {
-    font-size: 18px;
-    font-family: 'Anton';
+    font-size: 20px;
+    font-family: 'Open Sans';
     letter-spacing: 2px;
     margin: 0 20px;
+    min-height: 10vh;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    width: 25vw;
+    justify-content: center;
 }
 
 .about_large {
     font-size: 50px;
-    letter-spacing: 2px;
+    letter-spacing: 5px;
     margin: 0 20px;
+    width: 35vw;
+    text-align: center;
+    height:fit-content;
 }
 
 .about_sentence {
@@ -193,7 +222,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: fit-content;
+    width: 80vw;
     margin: 5vh 0;
 }
 
@@ -241,7 +270,82 @@
     margin: 5vh 0vw;
     height: fit-content;
     display: flex;
+    min-height: 50vh;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.experience_card_img {
+    height: 15vh;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    border-bottom: 1px solid rgb(77, 75, 75);
+    border-radius: 20px;
+    background-position: center;
+}
+
+.experience_card_postion {
+    font-size: 13px;
+    color: white;
+    height: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.b {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.experience_card {
+    border-radius: 20px;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.projects_img {
+    height: 30vh;
+}
+
+.projects_card {
+    height: 70vh;
+}
+
+.experience_card_content {
+    color: white;
+    width: 100%;
     height: 50vh;
+}
+
+.project_card_content {
+    height: 30vh;
+}
+
+.view_btn {
+    background-color: rgb(75, 75, 75, 0.9);
+    margin: 0;
+    border: 1px solid rgb(77, 75, 75);
+    border-radius: 10px;
+}
+
+.pro_ul {
+    margin: 2.5vh 0 !important;
+    height: 25vh !important;
+}
+
+.exp_ul {
+    margin: 2.5vh 0;
+    height: 45vh;
+}
+
+.exp_ul_li {
+    height: fit-content;
+    min-height: 10vh;
+    margin: 5px 0;
 }
 
 .projects {
@@ -328,7 +432,7 @@
     font-size: 15px;
     color: white;
     background-color: black;
-    font-family: 'Anton';
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-align: center;
 }
@@ -401,7 +505,7 @@
 .contact_content_card_overlay_options {
     width: 80%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     
 }
 
@@ -443,7 +547,7 @@
     margin: 10px;
     padding: 0;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -528,7 +632,18 @@
     .content {
         flex-direction: column;
     }
-
+    .experience_content {
+        flex-direction: column;
+    }
+    .experience_card {
+        width: 70%;
+    }
+    .experience_card_postion {
+        font-size: 20px;
+    }
+    .experience_card_content {
+        font-size: 18px;
+    }
     .projects_content_card_overlay {
         font-size: 12px;
     }
