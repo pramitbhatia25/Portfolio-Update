@@ -638,15 +638,6 @@
     .experience_card {
         width: 70%;
     }
-    .experience_card_postion {
-        font-size: 20px;
-    }
-    .experience_card_content {
-        font-size: 18px;
-    }
-    .projects_content_card_overlay {
-        font-size: 12px;
-    }
     .content_text {
         padding-left: 0vw;
         width: fit-content;
