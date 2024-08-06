@@ -1,0 +1,28 @@
+.about {
+    height: 96%;
+    width: 90%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-click {
+    cursor: pointer;
+}
+
+.about-header {
+    height: fit-content;
+    width: 100%;
+    color: rgb(200, 200, 200, 0.5);
+    font-family: "Open Sans";
+    padding: 1% 0;
+}
+
+.about-content {
+    height: fit-content;
+    width: 100%;
+    color: rgb(200, 200, 200, 1);
+    font-family: "Open Sans";
+    padding: 1% 0;
+}

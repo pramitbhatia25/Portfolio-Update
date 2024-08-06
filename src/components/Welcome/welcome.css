@@ -1,0 +1,136 @@
+.welcome {
+    height: 96%;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.welcome-left {
+    width: 60%; 
+    height: 100%;
+    color: white;
+    background-color: transparent;
+}
+
+.welcome-left-top {
+    color: rgb(200, 200, 200, 0.5);
+    font-family: "Open Sans";
+    padding: 1% 0;
+}
+
+.welcome-left-middle{
+    color: rgb(200, 200, 200, 1);
+    font-family: "Open Sans";
+    padding: 1% 0;
+}
+
+.welcome-left-bottom-card {
+    font-size: 25px;
+    color: white;
+    height: 50px;
+    width: 50px;
+    border: 1px solid lime;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 0px 1px lime;
+    transition: transform 0.3s ease-in-out;
+}
+
+.welcome-left-bottom-card:hover, .social:hover {
+    color: lime;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.welcome-left-bottom {
+    width: 60%;
+    color: rgb(200, 200, 200, 1);
+    font-family: "Open Sans";
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-between;
+}
+
+.welcome-right {
+    width: 30%;    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-right-img {
+    height: 70%;
+    width: 90%;
+    background: url("../../hello.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.welcome-right-details {
+    height: 30%;
+    width: 100%;
+    color: rgb(200, 200, 200, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Open Sans';
+}
+
+.social {
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 930px) {
+    .welcome {
+        height: 96%;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .welcome-left {
+        width: 100%; 
+        height: 100%;
+        color: white;
+        background-color: transparent;
+    }
+
+    .welcome-left-top {
+        text-align: center;
+    }
+
+    .welcome-left-middle {
+        text-align: center;
+    }
+
+    .welcome-left-bottom {
+        width: 100%;
+        margin: auto;
+        color: rgb(200, 200, 200, 1);
+        font-family: "Open Sans";
+        display: flex;
+        padding-top: 20px;
+        justify-content: space-around;
+    }
+
+    .welcome-right {
+        margin-top: 50px;
+        width: 100%;
+        height: 300px;
+    }
+
+    .welcome-right-img {
+        width: 200px;
+    }
+}

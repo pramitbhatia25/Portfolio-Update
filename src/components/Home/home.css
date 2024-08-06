@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.home {
+    min-height: 100vh;
+    height: fit-content;
+    width: 100vw;
+    background: url("../../bg2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+}
+
+.home-sub {
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-welcome-spotify {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 55vh;
+    margin-bottom: 5vh;
+    max-width: 1500px;
+}
+
+.home-welcome {
+    height: 100%;
+    width: 70vw;
+    border-radius: 10px;
+    border: 2px solid rgb(46, 46, 46, 0.9);
+    background-color: rgb(0, 0, 0);
+    max-width: 975px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-welcome:hover, .home-time:hover, .home-about:hover, .home-project:hover {
+    border: 1px solid lime;
+}
+
+.home-spotify {
+    height: 55vh;
+    width: 25vw;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    max-width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-about-projects {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 35vh;
+    max-width: 1500px;
+}
+
+.home-about {
+    height: 100%;
+    width: 35vw;
+    border-radius: 10px;
+    border: 2px solid rgb(46, 46, 46, 0.9);
+    background-color: rgb(0, 0, 0);
+    max-width: 525px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-project {
+    height: 100%;
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid rgb(46, 46, 46, 0.9);
+    background-color: rgb(0, 0, 0);
+    max-width: 900px;
+}
+
+@media (max-width: 930px) {
+
+    .home-welcome-spotify {
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        margin: 5vh 0;
+    }  
+
+    .home-welcome {
+        height: fit-content;
+        width: 95vw;
+        border-radius: 10px;
+        border: 2px solid rgb(46, 46, 46, 0.9);
+        background-color: rgb(0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px
+    }    
+
+    .home-spotify {
+        margin: 5vh 0;
+        width: 100vw;
+    }
+
+    .home-about-projects {
+        flex-direction: column;
+        height: fit-content;
+        width: 100vw;
+    }
+
+    .home-about {
+        width: 95vw;
+        max-width: none;
+        padding: 10px 0;
+        margin-bottom: 25px;
+    }
+
+    .home-project {
+        height: 50vh;
+        width: 95vw;
+        max-width: none;
+        padding: 10px 0;
+        margin-bottom: 50px;
+    }
+}
