@@ -1,27 +1,19 @@
 <h1 align="center">Hi 👋, I'm Pramit.</h1>
-<h3 align="center">Software Developer, AI Researcher, DevOps Professional, etc. etc.</h3>
+<h3 align="center">Hi, I'm Pramit Bhatia. I love designing and building robust systems that solve complex problems with elegance. I'm always eager to explore new technologies and enhance existing solutions to make a real difference.
+
+Feel free to reach out if you have any projects in mind, or just to connect 😊
+</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=pramitbhatia25&label=Profile%20views&color=0e75b6&style=flat" alt="pramitbhatia25" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=pramitbhatia25" alt="pramitbhatia25" /></a> </p>
 
-- 🔭 I’m currently working at: **Cybriant.**
-
-- 🌱 I’m currently learning: **Microsoft Azure / Deep Learning / AI.**
-
-- 👯 I’m looking to collaborate on: **hackathons / internships / you name it, I'm in..**
-
-- 👨‍💻 All of my projects are available at: [https://pramitbhatia25.github.io/Portfolio](https://pramitbhatia25.github.io/Portfolio)
-
-- 📝 I regularly write articles on: **I don't.**
-
-- 💬 Ask me about: **dont, just google it :/ (Unless its a job, then pls reach out)**
-
-- 📫 How to reach me: **pramitbhatia25@gmail.com**
-
-- 📄 Resume is here: [https://pramitbhatia25.github.io/Portfolio](https://pramitbhatia25.github.io/Portfolio)
-
-- ⚡ Fun fact: **I've switched 5 universities during my undergraduate degree.**
+- 🔭 I’m currently working at Cybriant as a Full-Time Software Engineer, after being an intern for 1 year.
+- 🌱 I'm pursuing a Masters Degree in Computer Science from Georgia Institute Of Technology.
+- ⚡ I've lived in 4 cities / been to 10+ schools / travelled to 3 countries so far.
+- 👨‍💻 All of my projects are available at: [Portfolio](https://pramitbhatia25.github.io/Portfolio)
+- 📫 Email - **pramitbhatia25@gmail.com**
+- 📄 Resume - [Resume](https://github.com/pramitbhatia25/Portfolio-Update/blob/main/public/Resume%20-%20FullTime.pdf)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
